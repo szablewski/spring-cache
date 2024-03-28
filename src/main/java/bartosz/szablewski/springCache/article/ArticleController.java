@@ -4,10 +4,7 @@ import lombok.val;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,5 +28,12 @@ public class ArticleController {
     ResponseEntity<Article> findAllArticle(@PathVariable Long articleId) {
         val articles = articleService.findById(articleId);
         return new ResponseEntity<>(articles, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{articleId}")
+    ResponseEntity<String> deleteArticle(@PathVariable Long articleId) {
+
+        articleService.deleteArticle(articleId);
+        return ResponseEntity.ok().build();
     }
 }
