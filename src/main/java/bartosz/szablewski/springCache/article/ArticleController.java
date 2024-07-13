@@ -25,7 +25,7 @@ public class ArticleController {
     }
 
     @GetMapping("/{articleId}")
-    ResponseEntity<Article> findAllArticle(@PathVariable Long articleId) {
+    ResponseEntity<Article> findById(@PathVariable Long articleId) {
         val articles = articleService.findById(articleId);
         return new ResponseEntity<>(articles, HttpStatus.OK);
     }
