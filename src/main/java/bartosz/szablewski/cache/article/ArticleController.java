@@ -1,4 +1,4 @@
-package bartosz.szablewski.springCache.article;
+package bartosz.szablewski.cache.article;
 
 import lombok.val;
 import org.springframework.http.HttpStatus;

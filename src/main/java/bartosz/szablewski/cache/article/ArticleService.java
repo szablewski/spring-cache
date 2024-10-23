@@ -1,6 +1,7 @@
-package bartosz.szablewski.springCache.article;
+package bartosz.szablewski.cache.article;
 
-import bartosz.szablewski.springCache.exception.EntityNotFound;
+import bartosz.szablewski.cache.exception.EntityNotFound;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -11,13 +12,10 @@ import java.util.List;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class ArticleService {
 
     private final ArticleRepository repository;
-
-    public ArticleService(ArticleRepository repository) {
-        this.repository = repository;
-    }
 
     @Cacheable(value = "article", key = "#articleId")
     public Article findById(final Long articleId) {

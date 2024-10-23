@@ -1,4 +1,4 @@
-package bartosz.szablewski.springCache.exception;
+package bartosz.szablewski.cache.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,6 +1,5 @@
-package bartosz.szablewski.springCache.article;
+package bartosz.szablewski.cache.user;
 
-import bartosz.szablewski.springCache.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,17 +11,15 @@ import java.time.LocalDate;
 @Setter
 @Getter
 @NoArgsConstructor
-@Table(name = "articles")
-public class Article {
+@Table(name = "users")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long articleId;
-    private String title;
-    private String content;
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User author;
+    private Long userId;
+    private String email;
+    private String firstName;
+    private String lastName;
     private LocalDate created;
     private LocalDate updated;
 }
